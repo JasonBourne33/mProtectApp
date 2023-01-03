@@ -34,14 +34,15 @@ public class Dx {
 
         //我们要将jar 转变成为dex 需要使用android tools 里面的dx.bat
         //使用java 调用windows 下的命令
-        Dx.dxCommand(aarDex, classes_jar);
+        Dx.dxCommand(classes_jar.getParentFile(), classes_jar); //d8 的命令只需要到目录就行了
+//        Dx.dxCommand(aarDex, classes_jar);
         return aarDex;
     }
 
     public static void dxCommand(File aarDex, File classes_jar) throws IOException, InterruptedException {
         Runtime runtime = Runtime.getRuntime();
-        String d8cmd="cmd.exe /C d8 --output " + classes_jar.getAbsolutePath()+ " "
-                +aarDex.getAbsolutePath();
+        String d8cmd="cmd.exe /C d8 --output " + aarDex.getAbsolutePath()+ " "
+                +classes_jar.getAbsolutePath();
         System.out.println("d8cmd=== "+d8cmd);
         Process process = runtime.exec(d8cmd);
 //        Process process = runtime.exec("cmd.exe /C dx --dex --output=" + aarDex.getAbsolutePath() + " " +

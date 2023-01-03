@@ -86,13 +86,13 @@ public class MyMain {
 		/**
 		 * 第3步 打包/对齐/签名
 		 */
-//        File unsignedApk = new File("JavaProtect/result/apk-unsigned.apk");
-//        unsignedApk.getParentFile().mkdirs();
-////        File disFile = new File(apkFile.getAbsolutePath() + File.separator+ "temp");
-//        Zip.zip(newApkFile, unsignedApk);
-//		//不用插件就不能自动使用原apk的签名...
-//        File signedApk = new File("JavaProtect/result/apk-signed.apk");
-//        Signature.signature(unsignedApk, signedApk);
+        File unsignedApk = new File("JavaProtect/result/apk-unsigned.apk");
+        unsignedApk.getParentFile().mkdirs();
+//        File disFile = new File(apkFile.getAbsolutePath() + File.separator+ "temp");
+        Zip.zip(newApkFile, unsignedApk);
+		//不用插件就不能自动使用原apk的签名...
+        File signedApk = new File("JavaProtect/result/apk-signed.apk");
+        Signature.signature(unsignedApk, signedApk);
     }
 
     

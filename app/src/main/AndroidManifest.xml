@@ -9,6 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name="com.example.mylibrary.ShellApplication"
         android:theme="@style/Theme.MProtectApp"
         tools:targetApi="31">
         <activity
